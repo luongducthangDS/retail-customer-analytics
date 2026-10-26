@@ -2,6 +2,8 @@
 
 Analysis of **1,067,371 transactions** across 2009–2011 (£17.29M net sales) from the UK-based Online Retail II dataset (UCI Machine Learning Repository). It addresses customer lifetime value concentration, isolates returns and cancellations, models behavioral RFM segmentation via NTILE quantiles, and produces an actionable CRM retention strategy with an interactive dashboard.
 
+![Dashboard](reports/figures/00_dashboard_preview.png)
+
 ## Executive Answer
 
 **Customer value is heavily concentrated, and customer drop-off happens within 45 days.** The top **24.2% of customers (Champions VIP)** generate **69.6% of company net revenue** (£12.04M). Conversely, without automated onboarding, newly acquired buyers drop from 100% to **22.5% retention by Month 1**.
