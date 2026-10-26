@@ -75,15 +75,19 @@
 
 ### 07. Findings & Root Cause Analysis
 1. **The 45-Day Retention Cliff:** Tháng 0 đạt 100%, nhưng sang Tháng 1 chỉ còn **22.5% khách quay lại**. Sau 45 ngày không chăm sóc, **77.5% khách hàng mới biến mất vĩnh viễn**.
-2. **Quy luật Pareto khốc liệt:** Nhóm **Champions VIP (24.2% khách hàng)** tạo ra **69.6% tổng doanh thu ròng** (£12.04 triệu bảng), với AOV lên tới £8,502.
-3. **Ảo tưởng nhóm khách "Lost":** 35% khách hàng thuộc nhóm Hibernating/Lost đã ngừng giao dịch trên 180 ngày. Nhóm này chỉ đóng góp 3.6% doanh thu. Việc tiếp tục đổ tiền chạy ads remarketing cho nhóm này là hành vi đốt ngân sách vô nghĩa.
+2. **Quy luật Pareto khốc liệt:** Nhóm **Champions VIP (24.2% khách hàng)** tạo ra **69.6% tổng doanh thu ròng** (£12.03 triệu bảng), với AOV lên tới £8,502.
+3. **Ảo tưởng nhóm khách "Lost":** 26.1% khách hàng thuộc nhóm Hibernating/Lost đã ngừng giao dịch trên 180 ngày. Nhóm này chỉ đóng góp 3.7% doanh thu. Việc tiếp tục đổ tiền chạy ads remarketing cho nhóm này là hành vi đốt ngân sách vô nghĩa.
 4. **Sai lầm voucher đại trà:** Nhóm Champions vốn mua hàng thường xuyên vì chất lượng và uy tín bán sỉ; nếu gửi voucher 20% cho họ sẽ trực tiếp làm mất hơn £2.4 triệu bảng lợi nhuận gộp mà không hề làm tăng thêm tần suất mua.
 
+![The 45-Day Retention Cliff](reports/figures/02_cohort_retention_heatmap.png)
+
 ### 08. Data Visualization & Dashboard Features
-* **Visual 1 (RFM Treemap & Scatter):** Thể hiện quy mô số lượng khách vs tổng tiền đóng góp của 7 nhóm RFM, làm nổi bật "con cá voi" Champions.
-* **Visual 2 (Cohort Heatmap Matrix):** Bản đồ nhiệt thể hiện tỷ lệ giữ chân từ Tháng 0 đến Tháng 12 của từng nhóm khách hàng theo tháng mua đầu.
-* **Visual 3 (Revenue Composition Stacked Bar):** Tỷ trọng doanh thu theo tháng giữa khách hàng mới và khách hàng mua lại.
-* **Visual 4 (Monthly Trend Line):** Xu hướng doanh thu ròng hàng tháng và giá trị đơn hàng trung bình.
+* **Visual 1 (RFM Treemap & Scatter):** Thể hiện quy mô số lượng khách vs tổng tiền đóng góp của các nhóm RFM, làm nổi bật "con cá voi" Champions.
+* **Visual 2 (Cohort Heatmap Matrix):** Bản đồ nhiệt thể hiện tỷ lệ giữ chân từ Tháng 0 đến Tháng 6 của từng nhóm khách hàng theo tháng mua đầu.
+* **Visual 3 (Revenue Composition Horizontal Bar):** Tỷ trọng doanh thu giữa các nhóm khách hàng theo giá trị thực tế.
+* **Visual 4 (Behavioral Bubble Matrix):** Phân bổ Recency vs Frequency thể hiện rõ hành vi từng phân khúc khách hàng.
+
+![Customer Lifecycle Behavioral Space](reports/figures/03_behavioral_rfm_space.png)
 
 ### 09. Standardized 5-Step Storytelling
 
@@ -96,10 +100,12 @@
 
 #### Câu chuyện 2: Phân bổ ngân sách Marketing theo giá trị thực tế của khách hàng
 * **1. Question:** Ngân sách quảng cáo tiếp thị lại (Remarketing) nên được phân bổ như thế nào giữa các tệp khách hàng cũ?
-* **2. Evidence:** Nhóm Hibernating/Lost chiếm 35% tệp khách hàng nhưng chỉ mang lại 3.6% doanh thu. Ngược lại, nhóm Champions chỉ chiếm 24% khách nhưng gánh tới gần 70% doanh thu.
+* **2. Evidence:** Nhóm Hibernating/Lost chiếm 26.1% tệp khách hàng nhưng chỉ mang lại 3.7% doanh thu. Ngược lại, nhóm Champions chỉ chiếm 24.2% khách nhưng gánh tới 69.6% doanh thu.
 * **3. Investigation:** Khảo sát hành vi cho thấy nhóm Lost chủ yếu là người mua quà tặng mùa vụ 1 lần (Giáng sinh). Chi phí quảng cáo trả phí để kéo 1 khách nhóm Lost quay lại cao gấp 3 lần giá trị vòng đời (LTV) mà họ tạo ra.
 * **4. Insight:** Doanh nghiệp đang đối xử bình đẳng với những đối tượng không bình đẳng.
 * **5. Action:** Ngừng hoàn toàn quảng cáo trả phí nhắm vào nhóm Lost; dồn nguồn lực chăm sóc cá nhân hóa cho nhóm Champions và kích hoạt nhóm At-Risk.
+
+![Extreme Value Concentration Pareto](reports/figures/01_rfm_pareto_concentration.png)
 
 ---
 
