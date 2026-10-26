@@ -1,0 +1,58 @@
+// Power BI DAX Measures for Online Retail II Segmentation & Retention Model
+// Relationships (Single direction):
+// fact_transactions[invoice_day]  -> dim_date[date]
+// fact_transactions[customer_id]  -> dim_customer[customer_id]
+// fact_transactions[stock_code]   -> dim_product[stock_code]
+// dim_customer[cohort_month]      -> dim_cohort[cohort_month]
+
+Net Revenue = 
+SUM ( fact_transactions[line_amount] )
+
+Total Transactions = 
+DISTINCTCOUNT ( fact_transactions[invoice_no] )
+
+Active Customers = 
+DISTINCTCOUNT ( fact_transactions[customer_id] )
+
+Items Sold = 
+CALCULATE (
+    SUM ( fact_transactions[quantity] ),
+    fact_transactions[is_cancelled] = FALSE ()
+)
+
+// Repeat Customer Rate (Orders >= 2)
+Repeat Customers Count = 
+VAR CustomersWithMultipleOrders = 
+    FILTER (
+        VALUES ( dim_customer[customer_id] ),
+        CALCULATE ( DISTINCTCOUNT ( fact_transactions[invoice_no] ), fact_transactions[is_cancelled] = FALSE () ) >= 2
+    )
+RETURN
+    COUNTROWS ( CustomersWithMultipleOrders )
+
+Repeat Customer Rate % = 
+DIVIDE ( [Repeat Customers Count], [Active Customers], 0 )
+
+// VIP Champions Contribution
+Champions Revenue Share % = 
+VAR ChampRevenue = 
+    CALCULATE (
+        [Net Revenue],
+        dim_customer[segment_label] = "Champions (VIP)"
+    )
+RETURN
+    DIVIDE ( ChampRevenue, [Net Revenue], 0 )
+
+// Average Order Value (AOV)
+AOV = 
+DIVIDE ( [Net Revenue], [Total Transactions], 0 )
+
+// Return / Cancellation Ratio
+Cancelled Invoices Count = 
+CALCULATE (
+    DISTINCTCOUNT ( fact_transactions[invoice_no] ),
+    fact_transactions[is_cancelled] = TRUE ()
+)
+
+Cancellation Rate % = 
+DIVIDE ( [Cancelled Invoices Count], [Total Transactions], 0 )
